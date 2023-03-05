@@ -44,7 +44,7 @@
                             location.href = 'index.php';
                         }
                     } else {
-                        alert("帳號錯誤");
+                        alert("密碼錯誤");
                         reset()
                     }
                 })
