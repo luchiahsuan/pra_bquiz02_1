@@ -60,4 +60,36 @@
 
         }
     }
+
+
+
+    // function reg() {
+    //     let user = {
+    //         acc: $("#acc").val(),
+    //         pw: $("#pw").val(),
+    //         pw2: $("#pw2").val(),
+    //         email: $("#email").val()
+    //     }
+    //     if (user.acc === '' ||
+    //         user.pw === '' ||
+    //         user.pw2 === '' ||
+    //         user.email === '') {
+    //         alert('不可空白')
+    //     } else {
+    //         if (user.pw == user.pw2) {
+    //             $.post("./chk_acc.php", user, (result) => {
+    //                 if (parseInt(result) === 1) {
+    //                     alert('帳號重複')
+    //                 } else {
+    //                     $.post("./reg.php", user, () => {
+    //                         alert('註冊完成,歡迎加入')
+    //                         reset();
+    //                     })
+    //                 }
+    //             })
+    //         } else {
+    //             alert('第二組密碼錯誤')
+    //         }
+    //     }
+    // }
 </script>
