@@ -70,7 +70,7 @@ class DB
 
     public function del($id)
     {
-        $sql = " select * from $this->table ";
+        $sql = " delete from $this->table ";
         if (is_array($id)) {
             $tmp = $this->arrayToSqlArray($id);
             $sql = $sql . " where " . join(" && ", $tmp);
@@ -169,5 +169,5 @@ $_SESSION['total']=1;
 }
 
 // $Bottom = new DB('bottom');
-// $bot=$Bottom->save(['bottom'=>11245667]);
+// $bot=$Bottom->all();
 // print_r($bot);
