@@ -28,32 +28,32 @@
         $("#acc,#pw").val('')
     }
 
-    function login() {
-        let user = {
-            acc: $("#acc").val(),
-            pw: $("#pw").val()
-        }
+    // function login() {
+    //     let user = {
+    //         acc: $("#acc").val(),
+    //         pw: $("#pw").val()
+    //     }
 
-        $.post("./api/chk_acc.php", user, (result) => {
-            if (parseInt(result) === 1) {
-                $.post("./api/chk_pw.php", user, (result) => {
-                    if (parseInt(result) === 1) {
-                        if (user.acc === 'admin') {
-                            location.href = 'back.php';
-                        } else {
-                            location.href = 'index.php';
-                        }
-                    } else {
-                        alert("密碼錯誤");
-                        reset()
-                    }
-                })
-            } else {
-                alert("帳號錯誤");
-                reset()
-            }
-        })
-    }
+    //     $.post("./api/chk_acc.php", user, (result) => {
+    //         if (parseInt(result) === 1) {
+    //             $.post("./api/chk_pw.php", user, (result) => {
+    //                 if (parseInt(result) === 1) {
+    //                     if (user.acc === 'admin') {
+    //                         location.href = 'back.php';
+    //                     } else {
+    //                         location.href = 'index.php';
+    //                     }
+    //                 } else {
+    //                     alert("密碼錯誤");
+    //                     reset()
+    //                 }
+    //             })
+    //         } else {
+    //             alert("帳號錯誤");
+    //             reset()
+    //         }
+    //     })
+    // }
 
 
 
@@ -119,4 +119,59 @@
 
     //     })
     // }
+
+    // function login() {
+    //     let user = {
+    //         acc: $("#acc").val(),
+    //         pw: $("#pw").val()
+    //     }
+    //     $.post("./api/chk_acc.php",
+    //         user, (result) => {
+    //             if (parseInt(result) === 1) {
+    //                 $.post("./api/chk_pw.php",
+    //                     user, (result) => {
+    //                         if (parseInt(result) === 1) {
+    //                             if (user.acc == 'admin') {
+    //                                 location.href = 'back.php';
+    //                             } else {
+    //                                 location.href = 'index.php';
+    //                             }
+    //                         } else {
+    //                             alert('密碼錯誤')
+    //                             reset()
+    //                         }
+    //                     })
+    //             } else {
+    //                 alert('帳號錯誤')
+    //                 reset()
+    //             }
+    //         })
+    // }
+
+
+    function login() {
+        let user = {
+            acc: $("#acc").val(),
+            pw: $("#pw").val()
+        }
+        $.post("./api/chk_acc.php", user, (result) => {
+            if (parseInt(result) === 1) {
+                $.post("./api/chk_pw.php", user, (result) => {
+                    if (parseInt(result) === 1) {
+                        if (user.acc === 'admin') {
+                            location.href = "back.php";
+                        } else {
+                            location.href = "index.php";
+                        }
+                    } else {
+                        alert('密碼錯誤')
+                        reset()
+                    }
+                })
+            } else {
+                alert('帳號錯誤')
+                reset()
+            }
+        })
+    }
 </script>
